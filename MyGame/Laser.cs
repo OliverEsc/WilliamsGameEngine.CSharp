@@ -1,6 +1,8 @@
 ﻿using GameEngine;
 using SFML.Graphics;
 using SFML.System;
+using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyGame
 {
@@ -25,7 +27,7 @@ namespace MyGame
             int msElapsed = elapsed.AsMilliseconds();
             Vector2f pos = _sprite.Position;
 
-            if(pos.X >  Game.RenderWindow.Size.X)
+            if (pos.X > Game.RenderWindow.Size.X)
             {
                 MakeDead();
             }
@@ -33,6 +35,10 @@ namespace MyGame
             {
                 _sprite.Position = new Vector2f(pos.X + Speed * msElapsed, pos.Y);
             }
+        }
+        public override FloatRect GetCollisionRect()
+        {
+            return _sprite.GetGlobalBounds();
         }
     }
 }
