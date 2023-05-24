@@ -7,16 +7,17 @@ namespace MyGame
     {
         private int _lives = 3;
         private int _score;
+
         public GameScene()
         {
             scrollingbackground background = new scrollingbackground();
             AddGameObject(background);
-            
+
             Ship ship = new Ship();
             AddGameObject(ship);
 
-            //MeteorSpawner meteorSpawner= new MeteorSpawner();
-            //AddGameObject(meteorSpawner);
+            MeteorSpawner meteorSpawner = new MeteorSpawner();
+            AddGameObject(meteorSpawner);
 
             Score score = new Score(new Vector2f(10.0f, 10.0f));
             AddGameObject(score);
@@ -26,9 +27,10 @@ namespace MyGame
         {
             return _score;
         }
-        public void IncreasesScore()
+
+        public void IncreaseScore()
         {
-            ++_score;
+            _score++;
         }
 
         public int GetLives()
@@ -38,7 +40,7 @@ namespace MyGame
 
         public void DecreaseLives()
         {
-            --_lives;
+            _lives--;
             if (_lives == 0)
             {
                 GameOverScene gameOverScene = new GameOverScene(_score);

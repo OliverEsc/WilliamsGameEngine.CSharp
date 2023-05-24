@@ -2,7 +2,6 @@
 using SFML.Graphics;
 using SFML.System;
 
-
 namespace MyGame
 {
     class Meteor : GameObject
@@ -29,7 +28,7 @@ namespace MyGame
             int msElapsed = elapsed.AsMilliseconds();
             Vector2f pos = _sprite.Position;
 
-            if(pos.X < _sprite.GetGlobalBounds().Width * -1)
+            if (pos.Y > Game.RenderWindow.Size.Y)
             {
                 GameScene scene = (GameScene)Game.CurrentScene;
                 scene.DecreaseLives();
@@ -38,9 +37,10 @@ namespace MyGame
             }
             else
             {
-                _sprite.Position = new Vector2f(pos.X - Speed * msElapsed, pos.Y);
+                _sprite.Position = new Vector2f(pos.X, pos.Y + Speed * msElapsed);
             }
         }
+
         public override FloatRect GetCollisionRect()
         {
             return _sprite.GetGlobalBounds();
@@ -52,7 +52,7 @@ namespace MyGame
             {
                 otherGameObject.MakeDead();
                 GameScene scene = (GameScene)Game.CurrentScene;
-                scene.IncreasesScore();
+                scene.IncreaseScore();
             }
             Vector2f pos = _sprite.Position;
             pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 2.0f;

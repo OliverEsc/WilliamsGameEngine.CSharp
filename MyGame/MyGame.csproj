@@ -28,6 +28,9 @@
     <None Update="Resources\background2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\BigBoomCar.png-1.png.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\BigBoomCar.png.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

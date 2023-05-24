@@ -12,14 +12,14 @@ namespace MyGame
 {
     class Ship : GameObject
     {
-        private const float Speed = 0.3f;
+        private const float Speed = 0.5f;
         private const int FireDelay = 1;
         private int _fireTimer;
 
         private readonly Sprite _sprite = new Sprite();
         public Ship()
         {
-            _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png");
+            _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png.png");
             _sprite.Position = new Vector2f(100, 105);
         }
 

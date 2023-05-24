@@ -11,12 +11,9 @@ namespace MyGame
 {
     class scrollingbackground : GameObject
     {
-        public readonly Sprite _sprite = new Sprite();
-        public readonly Sprite _sprite2 = new Sprite();
+        private readonly Sprite _sprite = new Sprite();
+        private readonly Sprite _sprite2 = new Sprite();
         private float Speed = 0.4f;
-
-        public uint currentX = 0;
-        public uint currentY = 0;
 
         public scrollingbackground()
         {
@@ -24,9 +21,8 @@ namespace MyGame
             _sprite.Position = new Vector2f(0, 0);
             _sprite2.Texture = Game.GetTexture("Resources/Background2.png");
             _sprite2.Position = new Vector2f(0, -600);
-
-
         }
+
         public override void Draw()
         {
             Game.RenderWindow.Draw(_sprite);
@@ -35,8 +31,6 @@ namespace MyGame
 
         public override void Update(Time elapsed)
         {
-
-
             Vector2f pos = _sprite.Position;
             Vector2f pos1 = _sprite2.Position;
 
@@ -56,13 +50,8 @@ namespace MyGame
                 y1 -= 1200;
             }
 
-
             _sprite.Position = new Vector2f(0, y);
             _sprite2.Position = new Vector2f(0, y1);
         }
-
-
-
     }
 }
-
