@@ -9,11 +9,14 @@ namespace MyGame
         private int _score;
         public GameScene()
         {
+            scrollingbackground background = new scrollingbackground();
+            AddGameObject(background);
+            
             Ship ship = new Ship();
             AddGameObject(ship);
 
-            MeteorSpawner meteorSpawner= new MeteorSpawner();
-            AddGameObject(meteorSpawner);
+            //MeteorSpawner meteorSpawner= new MeteorSpawner();
+            //AddGameObject(meteorSpawner);
 
             Score score = new Score(new Vector2f(10.0f, 10.0f));
             AddGameObject(score);

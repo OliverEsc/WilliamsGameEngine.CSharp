@@ -17,6 +17,9 @@ namespace MyGame
             Texture = Game.GetTexture("Resources/explosion-spritesheet.png");
             SetUpExplosionAnimation();
             PlayAnimation("explosion", AnimationMode.OnceForwards);
+
+            _boom.SoundBuffer = Game.GetSoundBuffer("Resources/boom.wav");
+            _boom.Play();
         }
 
         public override void Update(Time elapsed)
