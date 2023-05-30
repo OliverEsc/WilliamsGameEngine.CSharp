@@ -21,6 +21,7 @@ namespace MyGame
         {
             _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png.png");
             _sprite.Position = new Vector2f(100, 105);
+            AssignTag("ship");
         }
 
         public override void Draw()
@@ -53,6 +54,27 @@ namespace MyGame
                 Laser laser = new Laser(new Vector2f(laserX, laserY));
                 Game.CurrentScene.AddGameObject(laser);
             }
+        }
+
+        public override FloatRect GetCollisionRect()
+        {
+            return _sprite.GetGlobalBounds();
+        }
+
+        public override void HandleCollision(GameObject otherGameObject)
+        {
+            if (otherGameObject.HasTag("meteor"))
+            {
+                otherGameObject.MakeDead();
+                GameScene scene = (GameScene)Game.CurrentScene;
+                scene.DecreaseLives();
+            }
+            Vector2f pos = _sprite.Position;
+            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 1.0f;
+            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 1.0f;
+            Explosion explosion = new Explosion(pos);
+            Game.CurrentScene.AddGameObject(explosion);
+            MakeDead();
         }
     }
 }
