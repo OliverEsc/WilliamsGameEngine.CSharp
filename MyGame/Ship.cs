@@ -19,15 +19,15 @@ namespace MyGame
         private readonly Sprite _sprite = new Sprite();
         public Ship()
         {
-<<<<<<< HEAD
+
             _sprite.Texture = Game.GetTexture("Resources/Caar.png");
             _sprite.Position = new Vector2f(100, 105);
             
-=======
+
             _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png.png");
             _sprite.Position = new Vector2f(100, 105);
             AssignTag("ship");
->>>>>>> b7684be90041c61ec777ff8b7f815a6f7bf38184
+
         }
 
         public override void Draw()
