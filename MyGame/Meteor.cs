@@ -12,7 +12,7 @@ namespace MyGame
 
         public Meteor(Vector2f pos)
         {
-            _sprite.Texture = Game.GetTexture("Resources/meteor.png");
+            _sprite.Texture = Game.GetTexture("Resources/Car-12-1.png.png");
             _sprite.Position = pos;
             AssignTag("meteor");
             SetCollisionCheckEnabled(true);

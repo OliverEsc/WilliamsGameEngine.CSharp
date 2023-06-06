@@ -19,15 +19,22 @@ namespace MyGame
         private readonly Sprite _sprite = new Sprite();
         public Ship()
         {
+<<<<<<< HEAD
+            _sprite.Texture = Game.GetTexture("Resources/Caar.png");
+            _sprite.Position = new Vector2f(100, 105);
+            
+=======
             _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png.png");
             _sprite.Position = new Vector2f(100, 105);
             AssignTag("ship");
+>>>>>>> b7684be90041c61ec777ff8b7f815a6f7bf38184
         }
 
         public override void Draw()
         {
             Game.RenderWindow.Draw(_sprite);
         }
+
 
         public override void Update(Time elapsed)
         {
@@ -37,23 +44,24 @@ namespace MyGame
 
             int msElapsed = elapsed.AsMilliseconds();
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.Up))    { y -= Speed * msElapsed; }
-            if (Keyboard.IsKeyPressed(Keyboard.Key.Down))  { y += Speed * msElapsed; }
-            if (Keyboard.IsKeyPressed(Keyboard.Key.Left))  { x -= Speed * msElapsed; }
-            if (Keyboard.IsKeyPressed(Keyboard.Key.Right)) { x += Speed * msElapsed; }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Up) || Keyboard.IsKeyPressed(Keyboard.Key.W) )   { y -= Speed * msElapsed; }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Down) || Keyboard.IsKeyPressed(Keyboard.Key.S) ) { y += Speed * msElapsed; }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Left) || Keyboard.IsKeyPressed(Keyboard.Key.A)) { x -= Speed * msElapsed; }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Right) || Keyboard.IsKeyPressed(Keyboard.Key.D) ){ x += Speed * msElapsed; }
             _sprite.Position = new Vector2f(x, y);
 
             if(_fireTimer > 0) { _fireTimer -= msElapsed; }
 
-            if(Keyboard.IsKeyPressed(Keyboard.Key.Space) && _fireTimer <= 0)
-            {
-                _fireTimer = FireDelay;
-                FloatRect bounds = _sprite.GetGlobalBounds();
-                float laserX = x + bounds.Width;
-                float laserY = y + bounds.Height / 2.0f;
-                Laser laser = new Laser(new Vector2f(laserX, laserY));
-                Game.CurrentScene.AddGameObject(laser);
-            }
+
+            //if(Keyboard.IsKeyPressed(Keyboard.Key.Space) && _fireTimer <= 0)
+            //{
+            //    _fireTimer = FireDelay;
+            //    FloatRect bounds = _sprite.GetGlobalBounds();
+            //    float laserX = x + bounds.Width;
+            //    float laserY = y + bounds.Height / 2.0f;
+            //    Laser laser = new Laser(new Vector2f(laserX, laserY));
+            ////    Game.CurrentScene.AddGameObject(laser);
+            //}
         }
 
         public override FloatRect GetCollisionRect()

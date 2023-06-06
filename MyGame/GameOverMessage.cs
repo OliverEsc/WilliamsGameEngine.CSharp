@@ -16,7 +16,7 @@ namespace MyGame
             _text.Position = new Vector2f(50.0f, 50.0f);
             _text.CharacterSize = 48;
             _text.FillColor = Color.Red;
-            _text.DisplayedString = "GAME OVER\n\nYOUR SCORE: " + score + "\n\nPRESS ENTER TO CONTINUE";
+            _text.DisplayedString = "GAME OVER\n\nYOUR SCORE: " + score + "\n\nPRESS ENTER TO CONTINUE\n SUCK MY BALLS LOSER \n HOW DID YOU LOSE";
         }
 
         public override void Draw()
