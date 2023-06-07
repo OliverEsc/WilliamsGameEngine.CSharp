@@ -22,11 +22,7 @@ namespace MyGame
 
             _sprite.Texture = Game.GetTexture("Resources/Caar.png");
             _sprite.Position = new Vector2f(100, 105);
-            
-
-            _sprite.Texture = Game.GetTexture("Resources/BigBoomCar.png-1.png.png");
-            _sprite.Position = new Vector2f(100, 105);
-            AssignTag("ship");
+           
 
         }
 
@@ -78,8 +74,8 @@ namespace MyGame
                 scene.DecreaseLives();
             }
             Vector2f pos = _sprite.Position;
-            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 1.0f;
-            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 1.0f;
+            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 0.001f;
+            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 0.01f;
             Explosion explosion = new Explosion(pos);
             Game.CurrentScene.AddGameObject(explosion);
             MakeDead();

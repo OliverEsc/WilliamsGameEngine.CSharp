@@ -55,8 +55,8 @@ namespace MyGame
                 scene.IncreaseScore();
             }
             Vector2f pos = _sprite.Position;
-            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 1.0f;
-            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 1.0f;
+            pos.X = pos.X + (float)_sprite.GetGlobalBounds().Width / 0.1f;
+            pos.Y = pos.Y + (float)_sprite.GetGlobalBounds().Height / 0.1f;
             Explosion explosion = new Explosion(pos);
             Game.CurrentScene.AddGameObject(explosion);
             MakeDead();

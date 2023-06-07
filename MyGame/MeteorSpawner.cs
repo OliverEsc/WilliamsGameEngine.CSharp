@@ -6,7 +6,7 @@ namespace MyGame
 {
     class MeteorSpawner : GameObject
     {
-        private const int SpawnDelay = 1000;
+        private const int SpawnDelay = 375;
         private int _timer;
 
         public override void Update(Time elapsed)
@@ -22,7 +22,6 @@ namespace MyGame
                 float meteorX = Game.Random.Next() % size.X;
 
                 float meteorY = -200;
-
 
                 Meteor meteor = new Meteor(new Vector2f(meteorX, meteorY));
                 Game.CurrentScene.AddGameObject(meteor);

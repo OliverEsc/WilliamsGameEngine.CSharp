@@ -16,11 +16,9 @@ namespace MyGame
             Ship ship = new Ship();
             AddGameObject(ship);
 
-<<<<<<< HEAD
+
             MeteorSpawner meteorSpawner= new MeteorSpawner();
-=======
-            MeteorSpawner meteorSpawner = new MeteorSpawner();
->>>>>>> b7684be90041c61ec777ff8b7f815a6f7bf38184
+
             AddGameObject(meteorSpawner);
 
             Score score = new Score(new Vector2f(10.0f, 10.0f));

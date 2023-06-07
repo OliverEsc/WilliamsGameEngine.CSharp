@@ -18,7 +18,7 @@ namespace MyGame
             SetUpExplosionAnimation();
             PlayAnimation("explosion", AnimationMode.OnceForwards);
 
-            _boom.SoundBuffer = Game.GetSoundBuffer("Resources/boom.wav");
+            _boom.SoundBuffer = Game.GetSoundBuffer("Resources/Stuka Dive Sound.mp3");
             _boom.Play();
         }
 
